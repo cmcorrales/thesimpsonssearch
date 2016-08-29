@@ -1,34 +1,24 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-$("select.characteristics").change(function() {
-  if (!$("img").hasClass("gray")) {
-    $(this).addClass("gray")
-  }
+$(document).ready(function () {
+  $("select.characteristics").change(function() {
+  $("img").removeClass("colored").addClass("gray")
+  var trait = $("select.traits").val();
   var selected = $(this).val()
-  $("img."+selected).removeClass("gray")
+  if (trait == 0) {
+    $("img."+selected).addClass("colored").removeClass("gray")
+  }
+  if ($("img").hasClass(trait) && $("img").hasClass(selected)) {
+    $("img."+selected+"."+trait).addClass("colored").removeClass("gray")
+  }
 })
 $("select.traits").change(function() {
-  if (!$("img").hasClass("gray")) {
-    $(this).addClass("gray")
-  }
+  $("img").removeClass("colored").addClass("gray")
+  var characteristics = $("select.characteristics").val();
   var selected = $(this).val()
-  $("img."+selected).removeClass("gray")
+  if (characteristics == 0) {
+    $("img."+selected).addClass("colored").removeClass("gray")
+  }
+  if ($("img").hasClass(characteristics) && $("img").hasClass(selected)) {
+    $("img."+selected+"."+characteristics).addClass("colored").removeClass("gray")
+  }
+})
 })

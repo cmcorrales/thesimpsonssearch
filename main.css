@@ -46,6 +46,10 @@
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
 }
+.colored {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+}
 .characters {
     width: 540px;
     margin-top:90px;
