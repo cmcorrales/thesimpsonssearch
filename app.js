@@ -1,8 +1,8 @@
 $(document).ready(function () {
   $("select.characteristics").change(function() {
   $("img").removeClass("colored").addClass("gray")
-  var trait = $("select.traits").val();
-  var selected = $(this).val()
+  let trait = $("select.traits").val();
+  let selected = $(this).val()
   if (trait == 0) {
     $("img."+selected).addClass("colored").removeClass("gray")
   }
@@ -12,8 +12,8 @@ $(document).ready(function () {
 })
 $("select.traits").change(function() {
   $("img").removeClass("colored").addClass("gray")
-  var characteristics = $("select.characteristics").val();
-  var selected = $(this).val()
+  let characteristics = $("select.characteristics").val();
+  let selected = $(this).val()
   if (characteristics == 0) {
     $("img."+selected).addClass("colored").removeClass("gray")
   }
